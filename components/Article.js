@@ -165,12 +165,22 @@ const  newArticles = {
   thirdParagraph: 'I am testing the third para'
 }
 
-  
+
   data.push(newArticles)
   // console.log(data)
 
 
+  const  newArticles2 = {
+    title: 'I am another test article',
+    date: 'july 4, 2021',
+    firstParagraph: 'I am testing the first para',
+    secondParagraph: 'I am testing the second para',
+    thirdParagraph: 'I am testing the third para'
+}
+  data.push(newArticles2)
 
+
+  
 
 const articleSelector = document.querySelector('.articles')
 console.log(articleSelector)
