@@ -114,3 +114,81 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+
+
+
+function articleMaker(title, date, para1, para2, para3) {
+
+  const articleDiv = document.createElement('div')
+  const articleh2 = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const articlep1 = document.createElement('p')
+  const articlep2 = document.createElement('p')
+  const articlep3 = document.createElement('p')
+  const articleSpan = document.createElement('span')
+
+  articleDiv.appendChild(articleh2)
+  articleDiv.appendChild(articleDate)
+  articleDiv.appendChild(articlep1)
+  articleDiv.appendChild(articlep2)
+  articleDiv.appendChild(articlep3)
+  articleDiv.appendChild(articleSpan)
+
+
+  articleDiv.classList.add('article')
+  articleDate.classList.add('date')
+  articleSpan.classList.add('expandButton')
+
+
+  articleh2.textContent = title
+  articleDate.textContent = date
+  articlep1.textContent = para1
+  articlep2.textContent = para2
+  articlep3.textContent = para3
+  articleSpan.textContent = '+'
+
+  articleSpan.addEventListener('click', (e) => {
+    articleDiv.classList.toggle('article-open')
+    console.log(e)
+  })
+
+return articleDiv
+}
+// console.log(articleMaker('title', 'date','para1','para2','para3'))
+
+const  newArticles = {
+  title: 'test article',
+  date: 'August 4, 2021',
+  firstParagraph: 'I am testing the first para',
+  secondParagraph: 'I am testing the second para',
+  thirdParagraph: 'I am testing the third para'
+}
+
+
+  data.push(newArticles)
+  // console.log(data)
+
+
+  const  newArticles2 = {
+    title: 'I am another test article',
+    date: 'july 4, 2021',
+    firstParagraph: 'I am testing the first para',
+    secondParagraph: 'I am testing the second para',
+    thirdParagraph: 'I am testing the third para'
+}
+  data.push(newArticles2)
+
+
+  
+
+const articleSelector = document.querySelector('.articles')
+console.log(articleSelector)
+
+data.forEach(articleData => {
+  const article = articleMaker(articleData.title, articleData.date, articleData.firstParagraph, articleData.secondParagraph ,articleData.thirdParagraph)
+  articleSelector.appendChild(article)
+})
+
+
+
