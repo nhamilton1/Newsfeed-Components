@@ -44,8 +44,8 @@ function menuMaker(menuItems) {
 
   //Step 2
   menuItems.forEach(item=>{
-    const li=document.createElement('li')
-    li.textContent=item
+    const li = document.createElement('li')
+    li.textContent = item
     ulmenu.appendChild(li)
   })
 

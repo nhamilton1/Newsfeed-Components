@@ -155,18 +155,30 @@ function articleMaker(title, date, para1, para2, para3) {
 
 return articleDiv
 }
-
-
 // console.log(articleMaker('title', 'date','para1','para2','para3'))
+
+const  newArticles = {
+  title: 'test article',
+  date: 'August 4, 2021',
+  firstParagraph: 'I am testing the first para',
+  secondParagraph: 'I am testing the second para',
+  thirdParagraph: 'I am testing the third para'
+}
+
+  
+  data.push(newArticles)
+  // console.log(data)
+
+
+
 
 const articleSelector = document.querySelector('.articles')
 console.log(articleSelector)
-
-// console.log(data)
-
-
 
 data.forEach(articleData => {
   const article = articleMaker(articleData.title, articleData.date, articleData.firstParagraph, articleData.secondParagraph ,articleData.thirdParagraph)
   articleSelector.appendChild(article)
 })
+
+
+
