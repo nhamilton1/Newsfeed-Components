@@ -115,6 +115,9 @@ const data = [
   Refresh the page to see the new article.
 */
 
+
+
+
 function articleMaker(title, date, para1, para2, para3) {
 
   const articleDiv = document.createElement('div')
@@ -145,7 +148,24 @@ function articleMaker(title, date, para1, para2, para3) {
   articlep3.textContent = para3
   articleSpan.textContent = '+'
 
+  articleSpan.addEventListener('click', (e) => {
+    articleSpan.classList.toggle('article-open')
+  })
 
 return articleDiv
 }
+
+
 console.log(articleMaker('title', 'date','para1','para2','para3'))
+
+const articleSelector = document.querySelector('.articles')
+console.log(articleSelector)
+
+// console.log(data)
+
+
+
+data.forEach(articleData => {
+  const article = articleMaker(articleData.title, articleData.date, articleData.firstParagraph, articleData.secondParagraph ,articleData.thirdParagraph)
+  articleSelector.appendChild(article)
+})
