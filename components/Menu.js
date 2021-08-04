@@ -33,31 +33,38 @@ let menuItems = [
 */
 
 
-function menuMaker(addMenuItems) {
+function menuMaker(menuItems) {
 
-  const menuDiv = document.createElement('div')
-  const menuUl = document.createElement('ul')
-  const menuLi = document.createElement('li')
+  //Step 1
+  const menu = document.createElement('div')
+  menu.classList.add('menu')
+  const ulmenu = document.createElement('ul')
+  menu.appendChild(ulmenu)
+    
 
-
-
-  menuDiv.appendChild(menuUl)
-  menuUl.appendChild(menuLi)
-
-  menuDiv.classList.add('menu')
-
-  menuLi.textContent = addMenuItems
-
-  const menuButton = document.querySelector('.menu-button')
-
-  menuButton.addEventListener('click', (e) => {
-    menuDiv.classList.toggle('menu--open')
+  //Step 2
+  menuItems.forEach(item=>{
+    const li=document.createElement('li')
+    li.textContent=item
+    ulmenu.appendChild(li)
   })
 
 
-return menuDiv
+  //Step 3
+  const menuButton = document.querySelector('img')
+
+
+  //Step 4
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open')
+  })
+
+  //Step 5
+  return menu
 }
 
-console.log(menuMaker('data'))
 
+//Step 6
+const header=document.querySelector('.header')
+header.appendChild(menuMaker(menuItems)) 
 
