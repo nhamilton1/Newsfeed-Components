@@ -150,13 +150,14 @@ function articleMaker(title, date, para1, para2, para3) {
 
   articleSpan.addEventListener('click', (e) => {
     articleDiv.classList.toggle('article-open')
+    console.log(e)
   })
 
 return articleDiv
 }
 
 
-console.log(articleMaker('title', 'date','para1','para2','para3'))
+// console.log(articleMaker('title', 'date','para1','para2','para3'))
 
 const articleSelector = document.querySelector('.articles')
 console.log(articleSelector)
