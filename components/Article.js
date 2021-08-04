@@ -149,7 +149,7 @@ function articleMaker(title, date, para1, para2, para3) {
   articleSpan.textContent = '+'
 
   articleSpan.addEventListener('click', (e) => {
-    articleSpan.classList.toggle('article-open')
+    articleDiv.classList.toggle('article-open')
   })
 
 return articleDiv
